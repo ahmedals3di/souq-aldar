@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سوق الدار | تجارب ثقافية وعروض سعودية فنية</title>
+<meta name="description" content="سوق الدار — تجربة مجتمعية تجمع بين سلومنا وعلومنا. 23-27 سبتمبر، الرياض - جامعة الأميرة نورة. سجّل الآن كزائر أو مستفيد أو راعي.">
+<meta name="theme-color" content="#E65100">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   سوق الدار — الهوية البصرية 2025/2026
+   الخط: Effra (بديل ويب: Alexandria)
+   الألوان: لوحة ألوان المناطق من الدليل الإرشادي
+   =========================================================== */
+:root{
+  --orange:#E65100;   /* ساحة الفن */
+  --beige:#DAD1C3;    /* الملاس */
+  --yellow:#F4C430;   /* الملفى */
+  --sage:#709E80;     /* كشك الكوبونات */
+  --mint:#4CBBA0;     /* الطار */
+  --teal:#006D5C;     /* الليوان */
+  --navy:#00356E;     /* إرث */
+  --blue:#4A90E2;     /* الدكاكين */
+  --purple:#836F9B;   /* القدوع */
+  --tajseed:#22395B;  /* تجسيد */
+  --yamam:#B9CBE9;    /* يمام */
+  --cream:#FAF6EF;
+  --cream2:#F3EDE2;
+  --ink:#141414;
+  --ink2:#3d3a36;
+  --white:#ffffff;
+  --radius:22px;
+  --shadow:0 20px 60px -20px rgba(20,20,20,.18);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{
+  font-family:'Effra','Alexandria',system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  overflow-x:clip;
+  line-height:1.7;
+}
+::selection{background:var(--yellow);color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,select,textarea{font-family:inherit}
+
+/* ---------- شريط تقدم التمرير ---------- */
+.progress-bar{
+  position:fixed;top:0;right:0;height:5px;width:0%;z-index:1001;
+  background:linear-gradient(90deg,var(--orange),var(--yellow),var(--mint),var(--blue),var(--purple));
+  transition:width .08s linear;
+}
+
+/* ---------- الترويسة ---------- */
+header{
+  position:fixed;top:0;right:0;left:0;z-index:1000;
+  transition:all .4s var(--ease);
+  padding:18px 0;
+}
+header.scrolled{
+  background:rgba(250,246,239,.85);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 6px 30px -12px rgba(20,20,20,.12);
+  padding:10px 0;
+}
+.nav-wrap{
+  max-width:1240px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.35rem;line-height:1.1}
+.logo .mark{
+  width:52px;height:44px;display:grid;place-items:center;
+  background:var(--ink);color:var(--cream);
+  font-size:.72rem;font-weight:700;text-align:center;line-height:1.25;
+  clip-path:polygon(2% 8%,12% 3%,25% 7%,38% 2%,52% 6%,66% 2%,80% 7%,93% 3%,99% 9%,97% 25%,99% 45%,96% 62%,99% 80%,94% 95%,80% 92%,64% 97%,50% 93%,35% 97%,20% 93%,8% 97%,1% 90%,3% 70%,1% 50%,4% 28%);
+  transition:transform .4s var(--ease);
+}
+.logo:hover .mark{transform:rotate(-4deg) scale(1.06)}
+nav ul{display:flex;list-style:none;gap:6px;align-items:center}
+nav a.nav-link{
+  padding:9px 16px;border-radius:100px;font-weight:500;font-size:.95rem;
+  transition:background .3s,color .3s;position:relative;
+}
+nav a.nav-link:hover{background:rgba(20,20,20,.06)}
+nav a.nav-link.active{background:var(--ink);color:var(--cream)}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  padding:14px 30px;font-weight:700;font-size:1rem;color:var(--cream);
+  background:var(--ink);position:relative;overflow:hidden;
+  clip-path:polygon(1% 12%,8% 4%,20% 8%,33% 2%,47% 7%,60% 2%,74% 7%,88% 3%,99% 10%,98% 30%,100% 50%,97% 72%,99% 90%,90% 96%,76% 92%,62% 98%,48% 93%,34% 98%,20% 93%,8% 97%,1% 88%,3% 60%,0% 38%);
+  transition:transform .35s var(--ease);
+}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn:active{transform:translateY(0) scale(.97)}
+.btn .btn-fill{
+  position:absolute;inset:0;background:var(--orange);
+  transform:translateX(101%);transition:transform .45s var(--ease);z-index:0;
+}
+.btn:hover .btn-fill{transform:translateX(0)}
+.btn span{position:relative;z-index:1}
+.btn.btn-light{background:var(--white);color:var(--ink);filter:drop-shadow(0 8px 18px rgba(20,20,20,.18))}
+.btn.btn-light .btn-fill{background:var(--yellow)}
+.btn.btn-sm{padding:10px 22px;font-size:.92rem}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px}
+.hamburger span{width:26px;height:3px;background:var(--ink);border-radius:3px;transition:.3s var(--ease)}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* ---------- البطل (Hero) ---------- */
+.hero{
+  min-height:100svh;position:relative;display:flex;align-items:center;
+  padding:140px 24px 120px;overflow:hidden;
+}
+.hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:5;width:100%}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--white);padding:9px 20px;border-radius:100px;
+  font-weight:600;font-size:.92rem;box-shadow:var(--shadow);
+  animation:float-badge 5s ease-in-out infinite;
+}
+.hero-badge .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(230,81,0,.5)}60%{box-shadow:0 0 0 9px rgba(230,81,0,0)}}
+@keyframes float-badge{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.hero h1{
+  font-size:clamp(2.6rem,7.2vw,5.6rem);font-weight:900;line-height:1.25;
+  margin:26px 0 10px;max-width:900px;letter-spacing:-.5px;
+}
+.hero h1 .hl{position:relative;display:inline-block;padding:0 14px;white-space:nowrap}
+.hero h1 .hl i{
+  position:absolute;inset:6% -2%;z-index:-1;font-style:normal;
+  clip-path:polygon(2% 14%,10% 4%,24% 10%,38% 3%,52% 9%,66% 3%,80% 9%,92% 4%,99% 12%,97% 34%,100% 55%,96% 76%,99% 92%,88% 97%,74% 91%,60% 98%,45% 92%,30% 98%,16% 92%,6% 97%,0% 86%,3% 62%,0% 38%);
+  transform:scaleX(0);transform-origin:right;transition:transform .8s var(--ease);
+}
+.hero h1 .hl.painted i{transform:scaleX(1)}
+.hero h1 .hl.c-orange i{background:var(--orange)}
+.hero h1 .hl.c-orange{color:var(--cream)}
+.hero h1 .hl.c-yellow i{background:var(--yellow)}
+.hero h1 .hl.c-mint i{background:var(--mint)}
+.hero h1 .hl.c-mint{color:var(--cream)}
+.hero .sub{
+  font-size:clamp(1.05rem,2vw,1.35rem);color:var(--ink2);max-width:640px;
+  font-weight:400;margin-bottom:14px;
+}
+.hero .wait{font-weight:800;font-size:clamp(1.2rem,2.4vw,1.6rem);margin-bottom:34px}
+.hero .wait .dots span{animation:blink 1.4s infinite;display:inline-block}
+.hero .wait .dots span:nth-child(2){animation-delay:.2s}
+.hero .wait .dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,100%{opacity:.15}50%{opacity:1}}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.hero-info-chips{display:flex;gap:12px;flex-wrap:wrap;margin-top:44px}
+.chip{
+  display:flex;align-items:center;gap:10px;background:var(--white);
+  padding:12px 20px;border-radius:16px;font-weight:600;font-size:.95rem;
+  box-shadow:0 10px 30px -14px rgba(20,20,20,.15);
+  border:1.5px solid rgba(20,20,20,.05);
+  transition:transform .35s var(--ease), box-shadow .35s;
+}
+.chip:hover{transform:translateY(-4px);box-shadow:0 18px 40px -14px rgba(20,20,20,.22)}
+.chip svg{width:20px;height:20px;flex-shrink:0}
+/* أشكال عائمة */
+.blob{position:absolute;z-index:1;opacity:.92;will-change:transform;pointer-events:none;
+  clip-path:polygon(2% 8%,12% 3%,25% 7%,38% 2%,52% 6%,66% 2%,80% 7%,93% 3%,99% 9%,97% 25%,99% 45%,96% 62%,99% 80%,94% 95%,80% 92%,64% 97%,50% 93%,35% 97%,20% 93%,8% 97%,1% 90%,3% 70%,1% 50%,4% 28%);
+}
+.blob.b1{width:340px;height:300px;background:var(--yellow);top:-80px;left:-90px;transform:rotate(8deg)}
+.blob.b2{width:220px;height:190px;background:var(--mint);bottom:16%;left:6%;transform:rotate(-6deg)}
+.blob.b3{width:150px;height:130px;background:var(--purple);top:20%;left:30%;transform:rotate(12deg);opacity:.75}
+.blob.b4{width:260px;height:230px;background:var(--orange);top:-60px;right:-80px;transform:rotate(-9deg)}
+.blob.b5{width:120px;height:105px;background:var(--blue);bottom:10%;right:8%;transform:rotate(14deg);opacity:.8}
+.blob.b6{width:90px;height:80px;background:var(--sage);top:48%;right:24%;transform:rotate(-16deg);opacity:.7}
+
+/* ---------- الشريط المتحرك ---------- */
+.marquee{
+  background:var(--ink);color:var(--cream);padding:20px 0;overflow:hidden;
+  position:relative;z-index:6;
+  clip-path:polygon(0 14%,4% 6%,12% 12%,22% 4%,32% 11%,43% 3%,54% 10%,65% 4%,76% 11%,87% 4%,96% 10%,100% 6%,100% 88%,95% 96%,86% 89%,75% 97%,64% 90%,53% 97%,42% 90%,31% 96%,20% 89%,10% 96%,3% 90%,0 94%);
+  padding:34px 0;
+}
+.marquee-track{display:flex;gap:0;width:max-content;animation:scroll-rtl 28s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes scroll-rtl{from{transform:translateX(0)}to{transform:translateX(50%)}}
+.marquee-item{display:flex;align-items:center;gap:26px;padding:0 13px;font-weight:700;font-size:1.35rem;white-space:nowrap}
+.marquee-item .star{color:var(--yellow);font-size:1.1rem;animation:spin 6s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- العدّاد التنازلي ---------- */
+.countdown-section{padding:90px 24px 70px;position:relative}
+.count-wrap{
+  max-width:1240px;margin:0 auto;background:var(--navy);color:var(--cream);
+  padding:56px 40px;position:relative;overflow:hidden;
+  clip-path:polygon(0.5% 6%,6% 2%,16% 5%,27% 1%,38% 5%,50% 1%,62% 5%,73% 1%,84% 5%,94% 2%,99.5% 7%,98.5% 30%,100% 52%,98% 75%,99.5% 93%,93% 98%,82% 94%,70% 99%,58% 94%,46% 99%,34% 94%,22% 98%,11% 94%,3% 98%,0% 90%,1.5% 66%,0% 40%);
+  display:grid;grid-template-columns:1.1fr 1.6fr;gap:40px;align-items:center;
+}
+.count-wrap::before{
+  content:'';position:absolute;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(74,144,226,.35),transparent 70%);
+  top:-100px;left:-60px;
+}
+.count-title h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;line-height:1.4}
+.count-title p{opacity:.75;margin-top:8px;font-size:1.05rem}
+.count-boxes{display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap}
+.count-box{
+  background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.14);
+  min-width:108px;padding:20px 12px;text-align:center;border-radius:18px;
+  backdrop-filter:blur(4px);transition:transform .35s var(--ease);
+}
+.count-box:hover{transform:translateY(-6px)}
+.count-box b{font-size:clamp(2rem,4vw,3rem);font-weight:900;display:block;line-height:1.1;font-variant-numeric:tabular-nums}
+.count-box small{opacity:.7;font-size:.9rem;font-weight:500}
+.count-box.flash b{animation:tickflash .5s}
+@keyframes tickflash{0%{color:var(--yellow);transform:scale(1.12)}100%{color:inherit;transform:scale(1)}}
+
+/* ---------- العناوين العامة ---------- */
+.section{padding:100px 24px;position:relative}
+.container{max-width:1240px;margin:0 auto}
+.sec-head{margin-bottom:56px;max-width:720px}
+.sec-tag{
+  display:inline-block;font-weight:700;font-size:.9rem;color:var(--cream);
+  padding:7px 18px;margin-bottom:18px;
+  clip-path:polygon(2% 16%,10% 4%,26% 10%,42% 3%,58% 9%,74% 3%,90% 9%,98% 5%,100% 18%,97% 50%,100% 80%,92% 96%,76% 90%,60% 97%,44% 91%,28% 97%,12% 91%,2% 95%,0% 78%,2% 48%);
+}
+.sec-head h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.35}
+.sec-head p{color:var(--ink2);font-size:1.1rem;margin-top:12px}
+
+/* ---------- عن الفعالية ---------- */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.about-text p{font-size:1.15rem;color:var(--ink2);margin-bottom:18px}
+.about-text p strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.stat{
+  background:var(--white);padding:26px 18px;text-align:center;border-radius:var(--radius);
+  box-shadow:0 12px 34px -18px rgba(20,20,20,.16);
+  border:1.5px solid rgba(20,20,20,.05);
+  transition:transform .35s var(--ease);
+}
+.stat:hover{transform:translateY(-6px) rotate(-1deg)}
+.stat b{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;display:block;line-height:1.2}
+.stat span{color:var(--ink2);font-size:.95rem;font-weight:500}
+.stat:nth-child(1) b{color:var(--orange)}
+.stat:nth-child(2) b{color:var(--teal)}
+.stat:nth-child(3) b{color:var(--navy)}
+.about-visual{position:relative;min-height:420px}
+.about-card{
+  position:absolute;padding:26px;color:var(--cream);font-weight:700;
+  clip-path:polygon(2% 8%,12% 3%,25% 7%,38% 2%,52% 6%,66% 2%,80% 7%,93% 3%,99% 9%,97% 25%,99% 45%,96% 62%,99% 80%,94% 95%,80% 92%,64% 97%,50% 93%,35% 97%,20% 93%,8% 97%,1% 90%,3% 70%,1% 50%,4% 28%);
+  box-shadow:var(--shadow);transition:transform .45s var(--ease);
+  display:flex;flex-direction:column;justify-content:flex-end;gap:4px;
+}
+.about-card:hover{transform:scale(1.05) rotate(0deg)!important;z-index:10}
+.about-card small{font-weight:400;opacity:.85;font-size:.85rem}
+.ac1{width:52%;height:56%;background:var(--orange);top:0;right:0;transform:rotate(3deg)}
+.ac2{width:44%;height:44%;background:var(--teal);bottom:6%;right:38%;transform:rotate(-4deg)}
+.ac3{width:38%;height:38%;background:var(--yellow);color:var(--ink);top:14%;left:0;transform:rotate(6deg)}
+.ac4{width:30%;height:30%;background:var(--purple);bottom:0;left:8%;transform:rotate(-7deg)}
+
+/* ---------- زوايا الفعالية ---------- */
+.zones-section{background:var(--cream2);
+  clip-path:polygon(0 1.2%,3% .3%,9% 1%,17% .2%,26% 1%,36% .2%,46% 1%,56% .2%,66% 1%,76% .3%,86% 1%,94% .3%,100% 1%,100% 98.8%,97% 99.7%,91% 99%,83% 99.8%,74% 99%,64% 99.8%,54% 99%,44% 99.8%,34% 99%,24% 99.7%,14% 99%,6% 99.7%,0 99%);
+  padding-top:120px;padding-bottom:120px;
+}
+.zones-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.zones-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.zone-card{
+  background:var(--white);padding:34px 28px;border-radius:var(--radius);
+  position:relative;overflow:hidden;cursor:pointer;
+  border:1.5px solid rgba(20,20,20,.06);
+  transition:transform .45s var(--ease),box-shadow .45s;
+  min-height:250px;display:flex;flex-direction:column;
+}
+.zone-card:hover{transform:translateY(-10px);box-shadow:0 30px 60px -22px rgba(20,20,20,.28)}
+.zone-fill{
+  position:absolute;inset:0;transform:translateY(101%);
+  transition:transform .5s var(--ease);z-index:0;
+}
+.zone-card:hover .zone-fill{transform:translateY(0)}
+.zone-card>*{position:relative;z-index:1}
+.zone-icon{
+  width:64px;height:64px;display:grid;place-items:center;margin-bottom:20px;
+  clip-path:polygon(4% 12%,14% 4%,30% 9%,46% 3%,62% 8%,78% 3%,92% 8%,98% 16%,95% 36%,98% 56%,94% 76%,97% 92%,84% 97%,68% 92%,52% 98%,36% 93%,20% 97%,7% 93%,1% 82%,4% 58%,1% 34%);
+  transition:transform .5s var(--ease), background .4s, color .4s;
+}
+.zone-card:hover .zone-icon{transform:rotate(-8deg) scale(1.12)}
+.zone-icon svg{width:30px;height:30px}
+.zone-card h3{font-size:1.45rem;font-weight:800;margin-bottom:4px;transition:color .35s}
+.zone-card .zone-sub{font-weight:600;font-size:.95rem;margin-bottom:10px;transition:color .35s}
+.zone-card p{color:var(--ink2);font-size:.95rem;transition:color .35s;flex:1}
+.zone-num{
+  position:absolute;top:22px;left:22px;font-weight:900;font-size:.85rem;
+  width:34px;height:34px;display:grid;place-items:center;border-radius:50%;
+  border:1.5px solid rgba(20,20,20,.15);transition:all .35s;
+}
+.zone-card:hover h3,.zone-card:hover p,.zone-card:hover .zone-sub{color:var(--zc-text,#fff)}
+.zone-card:hover .zone-num{border-color:var(--zc-text,#fff);color:var(--zc-text,#fff)}
+.zone-card:hover .zone-icon{background:var(--zc-text,#fff)!important;color:var(--zc,#000)!important}
+
+/* ---------- التسجيل ---------- */
+.reg-section{position:relative;overflow:hidden}
+.reg-wrap{
+  max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:0;
+  background:var(--white);border-radius:32px;overflow:hidden;
+  box-shadow:0 40px 90px -30px rgba(20,20,20,.25);
+}
+.reg-side{
+  background:var(--ink);color:var(--cream);padding:56px 44px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden;
+}
+.reg-side::after{
+  content:'';position:absolute;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(244,196,48,.22),transparent 65%);
+  bottom:-140px;right:-100px;
+}
+.reg-side h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;line-height:1.4;margin-bottom:14px}
+.reg-side>p{opacity:.75;margin-bottom:36px}
+.reg-feats{display:flex;flex-direction:column;gap:18px;position:relative;z-index:1}
+.reg-feat{display:flex;gap:14px;align-items:flex-start}
+.reg-feat .fi{
+  width:42px;height:42px;flex-shrink:0;display:grid;place-items:center;color:var(--ink);
+  clip-path:polygon(4% 12%,14% 4%,30% 9%,46% 3%,62% 8%,78% 3%,92% 8%,98% 16%,95% 36%,98% 56%,94% 76%,97% 92%,84% 97%,68% 92%,52% 98%,36% 93%,20% 97%,7% 93%,1% 82%,4% 58%,1% 34%);
+}
+.reg-feat .fi svg{width:20px;height:20px}
+.reg-feat b{display:block;font-size:1.02rem}
+.reg-feat small{opacity:.7;font-size:.88rem}
+.reg-form-area{padding:56px 48px}
+.tabs{display:flex;gap:8px;background:var(--cream2);padding:7px;border-radius:100px;margin-bottom:38px;position:relative}
+.tab-btn{
+  flex:1;padding:13px 10px;border-radius:100px;font-weight:700;font-size:1rem;
+  color:var(--ink2);transition:color .3s;position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.tab-btn svg{width:18px;height:18px}
+.tab-btn.active{color:var(--cream)}
+.tab-glider{
+  position:absolute;top:7px;bottom:7px;border-radius:100px;background:var(--ink);
+  transition:right .45s var(--ease),width .45s var(--ease);z-index:1;
+}
+.tab-panel{display:none;animation:panel-in .5s var(--ease)}
+.tab-panel.active{display:block}
+@keyframes panel-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-grid .full{grid-column:1/-1}
+.field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:8px}
+.field label .req{color:var(--orange)}
+.field input,.field select,.field textarea{
+  width:100%;padding:14px 18px;border:1.8px solid rgba(20,20,20,.12);
+  border-radius:14px;font-size:1rem;background:var(--cream);
+  transition:border-color .3s,box-shadow .3s,transform .2s;color:var(--ink);
+}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--ink);box-shadow:0 0 0 4px rgba(20,20,20,.07);
+}
+.field input.error,.field select.error{border-color:#d5382a;box-shadow:0 0 0 4px rgba(213,56,42,.1);animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(5px)}75%{transform:translateX(-5px)}}
+.field .err-msg{color:#d5382a;font-size:.82rem;margin-top:6px;display:none;font-weight:500}
+.field.show-err .err-msg{display:block}
+/* أيام الحضور */
+.day-pills{display:flex;gap:10px;flex-wrap:wrap}
+.day-pill{
+  padding:12px 10px;border:1.8px solid rgba(20,20,20,.14);border-radius:14px;
+  text-align:center;min-width:74px;transition:all .3s var(--ease);
+  font-weight:600;background:var(--cream);flex:1;
+}
+.day-pill b{display:block;font-size:1.25rem;font-weight:800}
+.day-pill small{font-size:.78rem;color:var(--ink2)}
+.day-pill:hover{transform:translateY(-3px);border-color:var(--ink)}
+.day-pill.selected{background:var(--ink);color:var(--cream);border-color:var(--ink);transform:translateY(-3px)}
+.day-pill.selected small{color:rgba(250,246,239,.7)}
+/* عدّاد التذاكر */
+.stepper{display:flex;align-items:center;gap:0;border:1.8px solid rgba(20,20,20,.14);border-radius:14px;overflow:hidden;background:var(--cream);width:fit-content}
+.stepper button{
+  width:52px;height:52px;font-size:1.5rem;font-weight:700;color:var(--ink);
+  transition:background .25s;display:grid;place-items:center;
+}
+.stepper button:hover{background:var(--yellow)}
+.stepper .count{min-width:64px;text-align:center;font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+/* خيارات النشاط */
+.act-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.act-card{
+  padding:16px 10px;border:1.8px solid rgba(20,20,20,.14);border-radius:14px;text-align:center;
+  font-weight:600;font-size:.9rem;background:var(--cream);transition:all .3s var(--ease);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.act-card svg{width:24px;height:24px}
+.act-card:hover{transform:translateY(-3px)}
+.act-card.selected{background:var(--teal);border-color:var(--teal);color:#fff}
+/* مستويات الرعاية */
+.sponsor-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tier{
+  padding:20px 14px;border:1.8px solid rgba(20,20,20,.14);border-radius:16px;text-align:center;
+  transition:all .35s var(--ease);background:var(--cream);position:relative;
+}
+.tier b{display:block;font-size:1.05rem;font-weight:800;margin-bottom:4px}
+.tier small{color:var(--ink2);font-size:.8rem}
+.tier:hover{transform:translateY(-4px)}
+.tier.selected{border-color:var(--navy);background:var(--navy);color:#fff}
+.tier.selected small{color:rgba(255,255,255,.7)}
+.tier .medal{font-size:1.5rem;display:block;margin-bottom:6px}
+.submit-btn{width:100%;margin-top:28px;padding:18px;font-size:1.1rem}
+.form-note{text-align:center;color:var(--ink2);font-size:.85rem;margin-top:14px}
+/* نجاح الإرسال */
+.success-overlay{
+  position:fixed;inset:0;background:rgba(20,20,20,.55);backdrop-filter:blur(6px);
+  display:grid;place-items:center;z-index:2000;opacity:0;pointer-events:none;
+  transition:opacity .4s;padding:24px;
+}
+.success-overlay.show{opacity:1;pointer-events:auto}
+.success-card{
+  background:var(--cream);max-width:520px;width:100%;padding:56px 44px;text-align:center;
+  clip-path:polygon(1% 4%,8% 1%,20% 3%,33% .5%,47% 3%,60% .5%,74% 3%,88% 1%,99% 4%,98% 25%,100% 50%,97% 75%,99% 96%,90% 99%,76% 96.5%,62% 99.5%,48% 96.5%,34% 99.5%,20% 96.5%,8% 99%,1% 95%,3% 70%,0% 45%,2% 22%);
+  transform:scale(.85) translateY(30px);transition:transform .5s var(--ease);
+}
+.success-overlay.show .success-card{transform:scale(1) translateY(0)}
+.success-icon{
+  width:90px;height:90px;margin:0 auto 24px;background:var(--teal);color:#fff;
+  display:grid;place-items:center;border-radius:50%;
+}
+.success-icon svg{width:44px;height:44px}
+.success-icon .check-path{stroke-dasharray:60;stroke-dashoffset:60;transition:stroke-dashoffset .7s var(--ease) .3s}
+.success-overlay.show .check-path{stroke-dashoffset:0}
+.success-card h3{font-size:1.7rem;font-weight:900;margin-bottom:10px}
+.success-card p{color:var(--ink2);margin-bottom:28px}
+#confetti-canvas{position:fixed;inset:0;pointer-events:none;z-index:2001}
+
+/* ---------- الرعاة ---------- */
+.sponsors-section{background:var(--ink);color:var(--cream);
+  clip-path:polygon(0 1.2%,3% .3%,9% 1%,17% .2%,26% 1%,36% .2%,46% 1%,56% .2%,66% 1%,76% .3%,86% 1%,94% .3%,100% 1%,100% 100%,0 100%);
+  padding-top:130px;
+}
+.sponsors-section .sec-head p{color:rgba(250,246,239,.65)}
+.sponsor-group{margin-bottom:50px}
+.sponsor-group h4{
+  font-size:1.1rem;font-weight:700;margin-bottom:22px;display:flex;align-items:center;gap:14px;
+}
+.sponsor-group h4::after{content:'';flex:1;height:1px;background:rgba(250,246,239,.15)}
+.sponsor-logos{display:flex;gap:18px;flex-wrap:wrap}
+.sponsor-logo{
+  background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);
+  border-radius:18px;padding:28px 40px;display:grid;place-items:center;
+  min-width:170px;min-height:92px;font-weight:700;color:rgba(250,246,239,.55);
+  transition:all .4s var(--ease);font-size:.95rem;
+}
+.sponsor-logo:hover{background:rgba(255,255,255,.12);transform:translateY(-5px);color:var(--cream)}
+.sponsor-logo.strategic{min-width:230px;min-height:110px;font-size:1.1rem;border-color:var(--yellow);color:var(--yellow)}
+.sponsor-cta{
+  margin-top:26px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+  background:rgba(255,255,255,.05);border:1.5px dashed rgba(250,246,239,.3);
+  padding:30px 36px;border-radius:22px;flex-wrap:wrap;
+}
+.sponsor-cta p{font-weight:600;font-size:1.1rem}
+.sponsor-cta small{display:block;opacity:.6;font-weight:400;margin-top:4px}
+
+/* ---------- الأسئلة الشائعة ---------- */
+.faq-list{max-width:820px}
+.faq-item{
+  background:var(--white);border-radius:18px;margin-bottom:14px;overflow:hidden;
+  border:1.5px solid rgba(20,20,20,.07);transition:box-shadow .3s;
+}
+.faq-item.open{box-shadow:0 16px 44px -20px rgba(20,20,20,.2)}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;
+  padding:22px 26px;font-weight:700;font-size:1.05rem;text-align:right;color:var(--ink);
+}
+.faq-q .faq-icon{
+  width:34px;height:34px;border-radius:50%;background:var(--cream2);flex-shrink:0;
+  display:grid;place-items:center;transition:all .4s var(--ease);font-size:1.3rem;font-weight:400;
+}
+.faq-item.open .faq-icon{background:var(--orange);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.faq-a p{padding:0 26px 24px;color:var(--ink2)}
+
+/* ---------- التذييل ---------- */
+footer{background:var(--ink);color:var(--cream);padding:70px 24px 30px;margin-top:-2px}
+.footer-grid{
+  max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:50px;
+  padding-bottom:50px;border-bottom:1px solid rgba(250,246,239,.12);
+}
+.footer-brand p{opacity:.65;max-width:380px;margin-top:16px;font-size:.95rem}
+footer h5{font-size:1.05rem;font-weight:700;margin-bottom:18px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+footer ul a{opacity:.65;transition:opacity .3s,padding .3s;font-size:.95rem}
+footer ul a:hover{opacity:1;padding-right:6px}
+.footer-bottom{
+  max-width:1240px;margin:0 auto;padding-top:26px;display:flex;
+  justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  font-size:.88rem;opacity:.55;
+}
+.socials{display:flex;gap:10px}
+.socials a{
+  width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(250,246,239,.2);
+  display:grid;place-items:center;transition:all .35s var(--ease);
+}
+.socials a:hover{background:var(--cream);color:var(--ink);transform:translateY(-4px)}
+.socials svg{width:18px;height:18px}
+
+/* ---------- زر العودة لأعلى ---------- */
+.to-top{
+  position:fixed;bottom:28px;left:28px;z-index:900;width:54px;height:54px;
+  background:var(--orange);color:#fff;display:grid;place-items:center;
+  clip-path:polygon(4% 12%,14% 4%,30% 9%,46% 3%,62% 8%,78% 3%,92% 8%,98% 16%,95% 36%,98% 56%,94% 76%,97% 92%,84% 97%,68% 92%,52% 98%,36% 93%,20% 97%,7% 93%,1% 82%,4% 58%,1% 34%);
+  opacity:0;pointer-events:none;transform:translateY(20px);
+  transition:all .4s var(--ease);
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{transform:translateY(-5px) rotate(-6deg)}
+.to-top svg{width:22px;height:22px}
+
+/* ---------- حركات الظهور ---------- */
+.reveal{opacity:0;transform:translateY(46px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-right{opacity:0;transform:translateX(60px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-left{opacity:0;transform:translateX(-60px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.88);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- الاستجابة ---------- */
+@media(max-width:1024px){
+  .count-wrap{grid-template-columns:1fr;text-align:center}
+  .count-boxes{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .about-visual{min-height:340px}
+  .reg-wrap{grid-template-columns:1fr}
+  .reg-side{padding:44px 34px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav ul.nav-list{
+    position:fixed;top:0;right:0;width:100vw;height:100vh;background:var(--cream);flex-direction:column;
+    justify-content:center;gap:14px;transform:translateX(100%);transition:transform .5s var(--ease),visibility .5s;
+    z-index:-1;font-size:1.3rem;visibility:hidden;
+  }
+  nav ul.nav-list.open{visibility:visible}
+  header.menu-open{background:var(--cream);backdrop-filter:none;-webkit-backdrop-filter:none}
+  body.menu-open{overflow:hidden}
+  nav ul.nav-list.open{transform:translateX(0)}
+  nav ul.nav-list a.nav-link{font-size:1.25rem}
+  .hamburger{display:flex;z-index:10}
+  .nav-cta{display:none}
+  .form-grid{grid-template-columns:1fr}
+  .sponsor-tiers{grid-template-columns:1fr}
+  .reg-form-area{padding:40px 26px}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .blob.b3,.blob.b6{display:none}
+  .count-box{min-width:80px;padding:14px 8px}
+  .tab-btn span.tab-txt{display:none}
+  .tab-btn{padding:13px 6px}
+  .footer-grid{grid-template-columns:1fr;gap:34px}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ===================== الترويسة ===================== -->
+<header id="header">
+  <div class="nav-wrap">
+    <a href="#" class="logo" aria-label="سوق الدار">
+      <span class="mark">سوق<br>الدار</span>
+      <span>سوق الــدار</span>
+    </a>
+    <nav>
+      <ul class="nav-list" id="navList">
+        <li><a href="#about" class="nav-link">عن الفعالية</a></li>
+        <li><a href="#zones" class="nav-link">الزوايا</a></li>
+        <li><a href="#register" class="nav-link">التسجيل</a></li>
+        <li><a href="#sponsors" class="nav-link">الرعاة</a></li>
+        <li><a href="#faq" class="nav-link">الأسئلة</a></li>
+      </ul>
+    </nav>
+    <a href="#register" class="btn btn-sm nav-cta"><span class="btn-fill"></span><span>سجّل الآن</span></a>
+    <button class="hamburger" id="hamburger" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== البطل ===================== -->
+<section class="hero" id="hero">
+  <div class="blob b1" data-speed="0.35" data-rot="8"></div>
+  <div class="blob b2" data-speed="0.6" data-rot="-6"></div>
+  <div class="blob b3" data-speed="0.9" data-rot="12"></div>
+  <div class="blob b4" data-speed="0.45" data-rot="-9"></div>
+  <div class="blob b5" data-speed="0.75" data-rot="14"></div>
+  <div class="blob b6" data-speed="1.1" data-rot="-16"></div>
+
+  <div class="hero-inner">
+    <div class="hero-badge reveal">
+      <span class="dot"></span>
+      23 – 27 سبتمبر • الرياض - جامعة الأميرة نورة
+    </div>
+    <h1 id="heroTitle">
+      تجارب <span class="hl c-orange">ثقافية<i></i></span><br>
+      وعروض سعودية <span class="hl c-yellow">فنية<i></i></span>
+    </h1>
+    <p class="sub">
+      تجربة مجتمعية، تجمع بين <strong>سلومنا وعلومنا</strong>! وتقديمها بأسلوب عصري وحديث،
+      بتلقى فيها أكلاتنا، فنونا، لعبنا، تراثنا وغيره الكثير.
+    </p>
+    <p class="wait">تـرانـا ننتظـرك<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+    <div class="hero-ctas">
+      <a href="#register" class="btn"><span class="btn-fill"></span><span>سجّـل وسيّـر ↓</span></a>
+      <a href="#register" class="btn btn-light" data-tab-jump="beneficiary"><span class="btn-fill"></span><span>سجّل متجرك</span></a>
+    </div>
+    <div class="hero-info-chips">
+      <div class="chip reveal" style="transition-delay:.1s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E65100" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        23 – 27 سبتمبر
+      </div>
+      <div class="chip reveal" style="transition-delay:.2s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#006D5C" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        06:00 م – 12:00 ص
+      </div>
+      <div class="chip reveal" style="transition-delay:.3s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00356E" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        الرياض - جامعة الأميرة نورة
+      </div>
+      <div class="chip reveal" style="transition-delay:.4s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#836F9B" stroke-width="2" stroke-linecap="round"><path d="M4 9h16v11H4zM4 9l2-5h12l2 5M12 9v11"/></svg>
+        الدخول مجاني بالتسجيل
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== الشريط المتحرك ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><span class="star">✦</span> أكلاتنا</div>
+    <div class="marquee-item"><span class="star">✦</span> فنونا</div>
+    <div class="marquee-item"><span class="star">✦</span> لعبنا</div>
+    <div class="marquee-item"><span class="star">✦</span> تراثنا</div>
+    <div class="marquee-item"><span class="star">✦</span> سلومنا</div>
+    <div class="marquee-item"><span class="star">✦</span> علومنا</div>
+    <div class="marquee-item"><span class="star">✦</span> قهوتنا</div>
+    <div class="marquee-item"><span class="star">✦</span> حرفنا</div>
+  </div>
+</div>
+
+<!-- ===================== العدّاد التنازلي ===================== -->
+<section class="countdown-section">
+  <div class="count-wrap reveal-scale">
+    <div class="count-title">
+      <h2>العدّ التنازلي لفتح الأبواب</h2>
+      <p>يوم 23 سبتمبر الساعة 6 مساءً.. أول ليالي سوق الدار</p>
+    </div>
+    <div class="count-boxes" id="countdown">
+      <div class="count-box"><b id="cd-days">--</b><small>يوم</small></div>
+      <div class="count-box"><b id="cd-hours">--</b><small>ساعة</small></div>
+      <div class="count-box"><b id="cd-mins">--</b><small>دقيقة</small></div>
+      <div class="count-box"><b id="cd-secs">--</b><small>ثانية</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== عن الفعالية ===================== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal-right">
+        <span class="sec-tag" style="background:var(--teal)">عن الفعالية</span>
+        <h2 class="sec-head" style="margin-bottom:26px;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.35">
+          سوق شعبي بروح عصرية.. يجمعنا على اللي يشبهنا
+        </h2>
+        <p>
+          <strong>سوق الدار</strong> فعالية مجتمعية تنظّم بدعم من <strong>بنك التنمية الاجتماعية</strong>،
+          تفتح أبوابها للأسر المنتجة وأصحاب المشاريع الصغيرة ليعرضوا إبداعاتهم في أجواء تراثية
+          سعودية أصيلة.
+        </p>
+        <p>
+          عشر زوايا متنوعة، كل زاوية لها لونها وطابعها وتجربتها الخاصة — من القهوة السعودية
+          والحِرف اليدوية، إلى الفنون الحية والفودتركس والجوائز.
+        </p>
+        <div class="stats">
+          <div class="stat"><b data-count="10">0</b><span>زوايا وتجارب</span></div>
+          <div class="stat"><b data-count="5">0</b><span>ليالٍ متتالية</span></div>
+          <div class="stat"><b data-count="100" data-suffix="+">0</b><span>أسرة منتجة ومشروع</span></div>
+        </div>
+      </div>
+      <div class="about-visual reveal-left">
+        <div class="about-card ac1">ساحة الفن<small>إبداع مباشر وورش حية</small></div>
+        <div class="about-card ac2">الليوان<small>جلساتنا وسوالفنا</small></div>
+        <div class="about-card ac3">الملفى<small>جلسات تجمع وراحة</small></div>
+        <div class="about-card ac4">القدوع<small>حفاوة سعودية</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== زوايا الفعالية ===================== -->
+<section class="zones-section section" id="zones">
+  <div class="container">
+    <div class="zones-head reveal">
+      <div>
+        <span class="sec-tag" style="background:var(--orange)">زوايا الفعالية</span>
+        <h2 style="font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.35">محطات مختلفة..<br>في كل محطة تجربة سعودية جديدة</h2>
+      </div>
+      <p style="color:var(--ink2);max-width:340px;font-size:1.05rem">مرّر على أي زاوية لتكتشف لونها وتجربتها بأسلوب يعكس هويتنا</p>
+    </div>
+    <div class="zones-grid" id="zonesGrid"><!-- تُبنى بالجافاسكربت --></div>
+  </div>
+</section>
+
+<!-- ===================== التسجيل ===================== -->
+<section class="section reg-section" id="register">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag" style="background:var(--navy)">معلومات التسجيل</span>
+      <h2>احجز مكانك في سوق الدار</h2>
+      <p>سواء كنت زائرًا، أو صاحب مشروع، أو جهة راعية — مكانك محفوظ عندنا</p>
+    </div>
+    <div class="reg-wrap reveal-scale">
+      <div class="reg-side">
+        <h2 id="regSideTitle">سجّل وسيّر..<br>ترانا ننتظرك</h2>
+        <p id="regSideDesc">التسجيل مجاني ولا يأخذ من وقتك أكثر من دقيقة</p>
+        <div class="reg-feats">
+          <div class="reg-feat">
+            <span class="fi" style="background:var(--yellow)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/></svg>
+            </span>
+            <div><b>تأكيد فوري</b><small>تصلك رسالة تأكيد فور إتمام التسجيل</small></div>
+          </div>
+          <div class="reg-feat">
+            <span class="fi" style="background:var(--mint)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12.5l2 2 4-5"/></svg>
+            </span>
+            <div><b>دخول مجاني</b><small>التذاكر مجانية لجميع أفراد العائلة</small></div>
+          </div>
+          <div class="reg-feat">
+            <span class="fi" style="background:var(--orange)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.6-3.4 2.8-5 5.5-5s4.9 1.6 5.5 5"/><path d="M16 8.5c1.8.4 3 1.7 3.4 3.5M15.5 4.6a4.6 4.6 0 0 1 2.9 2"/></svg>
+            </span>
+            <div><b>فعالية عائلية</b><small>أجواء آمنة ومناسبة لكل الأعمار</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="reg-form-area">
+        <div class="tabs" id="regTabs" role="tablist">
+          <div class="tab-glider" id="tabGlider"></div>
+          <button class="tab-btn active" data-tab="visitor" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c.7-3.7 3.2-5.5 6.5-5.5s5.8 1.8 6.5 5.5"/></svg>
+            زائر <span class="tab-txt"></span>
+          </button>
+          <button class="tab-btn" data-tab="beneficiary" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h16v11H4zM4 9l2-5h12l2 5M12 9v11"/></svg>
+            مستفيد <span class="tab-txt"></span>
+          </button>
+          <button class="tab-btn" data-tab="sponsor" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3z"/></svg>
+            راعي <span class="tab-txt"></span>
+          </button>
+        </div>
+
+        <!-- نموذج الزائر -->
+        <form class="tab-panel active" id="panel-visitor" data-panel="visitor" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label>الاسم الكامل <span class="req">*</span></label>
+              <input type="text" name="name" placeholder="اسمك الثلاثي" required>
+              <span class="err-msg">فضلاً أدخل اسمك الكامل</span>
+            </div>
+            <div class="field">
+              <label>رقم الجوال <span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="05xxxxxxxx" dir="ltr" style="text-align:right" required pattern="^05\d{8}$">
+              <span class="err-msg">أدخل رقم جوال سعودي صحيح (05xxxxxxxx)</span>
+            </div>
+            <div class="field full">
+              <label>البريد الإلكتروني <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="you@example.com" dir="ltr" style="text-align:right" required>
+              <span class="err-msg">أدخل بريدًا إلكترونيًا صحيحًا</span>
+            </div>
+            <div class="field full">
+              <label>تاريخ الحضور <span class="req">*</span></label>
+              <div class="day-pills" id="visitorDays">
+                <button type="button" class="day-pill" data-day="23"><b>23</b><small>الأربعاء</small></button>
+                <button type="button" class="day-pill" data-day="24"><b>24</b><small>الخميس</small></button>
+                <button type="button" class="day-pill" data-day="25"><b>25</b><small>الجمعة</small></button>
+                <button type="button" class="day-pill" data-day="26"><b>26</b><small>السبت</small></button>
+                <button type="button" class="day-pill" data-day="27"><b>27</b><small>الأحد</small></button>
+              </div>
+              <span class="err-msg" id="daysErr" style="color:#d5382a;font-size:.82rem;margin-top:6px;display:none;font-weight:500">اختر يومًا واحدًا على الأقل</span>
+            </div>
+            <div class="field full">
+              <label>عدد التذاكر <span class="req">*</span></label>
+              <div class="stepper">
+                <button type="button" id="tMinus" aria-label="إنقاص">−</button>
+                <span class="count" id="ticketCount">1</span>
+                <button type="button" id="tPlus" aria-label="زيادة">+</button>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn submit-btn"><span class="btn-fill"></span><span>تأكيد التسجيل ✦</span></button>
+          <p class="form-note">بالتسجيل أنت توافق على سياسة الخصوصية وشروط الفعالية</p>
+        </form>
+
+        <!-- نموذج المستفيد -->
+        <form class="tab-panel" id="panel-beneficiary" data-panel="beneficiary" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label>اسم صاحب المشروع <span class="req">*</span></label>
+              <input type="text" name="name" placeholder="الاسم الكامل" required>
+              <span class="err-msg">فضلاً أدخل الاسم الكامل</span>
+            </div>
+            <div class="field">
+              <label>رقم الجوال <span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="05xxxxxxxx" dir="ltr" style="text-align:right" required pattern="^05\d{8}$">
+              <span class="err-msg">أدخل رقم جوال سعودي صحيح</span>
+            </div>
+            <div class="field">
+              <label>البريد الإلكتروني <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="you@example.com" dir="ltr" style="text-align:right" required>
+              <span class="err-msg">أدخل بريدًا إلكترونيًا صحيحًا</span>
+            </div>
+            <div class="field">
+              <label>اسم المشروع / المتجر <span class="req">*</span></label>
+              <input type="text" name="store" placeholder="مثال: قهوة أم سلطان" required>
+              <span class="err-msg">فضلاً أدخل اسم المشروع</span>
+            </div>
+            <div class="field full">
+              <label>نوع النشاط <span class="req">*</span></label>
+              <div class="act-cards" id="actCards">
+                <button type="button" class="act-card" data-act="أكل وضيافة">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 3v7a2.5 2.5 0 0 0 5 0V3M7.5 3v18M16 3c-1.7 1.5-2.5 3.8-2.5 6.5 0 1.9 1 3 2.5 3V21"/></svg>
+                  أكل وضيافة
+                </button>
+                <button type="button" class="act-card" data-act="حرف يدوية">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3 3 8.5v7L12 21l9-5.5v-7L12 3z"/><path d="M12 21v-7M3 8.5l9 5.5 9-5.5"/></svg>
+                  حرف يدوية
+                </button>
+                <button type="button" class="act-card" data-act="فنون وعروض">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="10" r="1.2" fill="currentColor"/><circle cx="15.5" cy="10" r="1.2" fill="currentColor"/><path d="M8 15c1.2 1.2 2.5 1.8 4 1.8s2.8-.6 4-1.8"/></svg>
+                  فنون وعروض
+                </button>
+                <button type="button" class="act-card" data-act="منتجات ومقتنيات">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 7h12l1.5 14h-15L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+                  منتجات ومقتنيات
+                </button>
+              </div>
+              <span class="err-msg" id="actErr" style="color:#d5382a;font-size:.82rem;margin-top:6px;display:none;font-weight:500">اختر نوع النشاط</span>
+            </div>
+            <div class="field full">
+              <label>الزاوية المفضلة</label>
+              <select name="zone">
+                <option value="">اختر الزاوية الأنسب لنشاطك (اختياري)</option>
+                <option>الدكاكين — سوق المشاريع الصغيرة</option>
+                <option>الملاس — الفودتركس والمأكولات</option>
+                <option>تجسيد — المنتجات الفاخرة المبتكرة</option>
+                <option>إرث — الورش والتجارب التراثية</option>
+                <option>ساحة الفن — الورش والعروض الحية</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label>نبذة عن مشروعك</label>
+              <textarea name="about" placeholder="عرّفنا على منتجك أو خدمتك بسطرين.."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn submit-btn"><span class="btn-fill"></span><span>تقديم طلب المشاركة ✦</span></button>
+          <p class="form-note">تُراجع الطلبات خلال 3 أيام عمل ويتم التواصل مع المقبولين</p>
+        </form>
+
+        <!-- نموذج الراعي -->
+        <form class="tab-panel" id="panel-sponsor" data-panel="sponsor" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label>اسم الجهة <span class="req">*</span></label>
+              <input type="text" name="org" placeholder="اسم الشركة أو الجهة" required>
+              <span class="err-msg">فضلاً أدخل اسم الجهة</span>
+            </div>
+            <div class="field">
+              <label>اسم مسؤول التواصل <span class="req">*</span></label>
+              <input type="text" name="name" placeholder="الاسم الكامل" required>
+              <span class="err-msg">فضلاً أدخل اسم المسؤول</span>
+            </div>
+            <div class="field">
+              <label>رقم الجوال <span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="05xxxxxxxx" dir="ltr" style="text-align:right" required pattern="^05\d{8}$">
+              <span class="err-msg">أدخل رقم جوال سعودي صحيح</span>
+            </div>
+            <div class="field">
+              <label>البريد الرسمي <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="name@company.com" dir="ltr" style="text-align:right" required>
+              <span class="err-msg">أدخل بريدًا إلكترونيًا صحيحًا</span>
+            </div>
+            <div class="field full">
+              <label>مستوى الرعاية <span class="req">*</span></label>
+              <div class="sponsor-tiers" id="tierCards">
+                <button type="button" class="tier" data-tier="استراتيجي">
+                  <span class="medal">🏆</span><b>راعي استراتيجي</b><small>الحضور الأبرز في الفعالية</small>
+                </button>
+                <button type="button" class="tier" data-tier="بلاتيني">
+                  <span class="medal">💎</span><b>راعي بلاتيني</b><small>حضور مميز وشراكة واسعة</small>
+                </button>
+                <button type="button" class="tier" data-tier="ذهبي">
+                  <span class="medal">⭐</span><b>راعي ذهبي</b><small>مشاركة داعمة للفعالية</small>
+                </button>
+              </div>
+              <span class="err-msg" id="tierErr" style="color:#d5382a;font-size:.82rem;margin-top:6px;display:none;font-weight:500">اختر مستوى الرعاية</span>
+            </div>
+            <div class="field full">
+              <label>رسالتكم</label>
+              <textarea name="msg" placeholder="حدثونا عن اهتمامكم بالشراكة.."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn submit-btn"><span class="btn-fill"></span><span>إرسال طلب الرعاية ✦</span></button>
+          <p class="form-note">سيتواصل معكم فريق الشراكات خلال يومي عمل</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== الرعاة ===================== -->
+<section class="sponsors-section section" id="sponsors">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag" style="background:var(--yellow);color:var(--ink)">شركاء النجاح</span>
+      <h2>الرعاة والشركاء</h2>
+      <p>بدعمهم وشراكتهم.. يكبر سوق الدار كل سنة</p>
+    </div>
+    <div class="sponsor-group reveal">
+      <h4>الراعي الاستراتيجي</h4>
+      <div class="sponsor-logos">
+        <div class="sponsor-logo strategic">بنك التنمية الاجتماعية</div>
+      </div>
+    </div>
+    <div class="sponsor-group reveal">
+      <h4>الرعاة البلاتينيون</h4>
+      <div class="sponsor-logos">
+        <div class="sponsor-logo">شعار الراعي</div>
+        <div class="sponsor-logo">شعار الراعي</div>
+        <div class="sponsor-logo">شعار الراعي</div>
+        <div class="sponsor-logo">شعار الراعي</div>
+      </div>
+    </div>
+    <div class="sponsor-group reveal">
+      <h4>الرعاة الذهبيون</h4>
+      <div class="sponsor-logos">
+        <div class="sponsor-logo">شعار الراعي</div>
+        <div class="sponsor-logo">شعار الراعي</div>
+        <div class="sponsor-logo">شعار الراعي</div>
+      </div>
+    </div>
+    <div class="sponsor-cta reveal">
+      <p>ودّك تكون شريك في التجربة؟<small>انضم لقائمة رعاة سوق الدار وكن جزءًا من الحكاية</small></p>
+      <a href="#register" class="btn btn-light" data-tab-jump="sponsor"><span class="btn-fill"></span><span>قدّم طلب رعاية</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== الأسئلة الشائعة ===================== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag" style="background:var(--purple)">الأسئلة الشائعة</span>
+      <h2>عندك سؤال؟ إجابته هنا</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">هل الدخول مجاني؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>نعم، الدخول مجاني بالكامل لجميع الزوار، ويكفي التسجيل المسبق عبر هذه الصفحة لضمان مكانك واستلام تذكرتك الرقمية.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">متى وأين تقام الفعالية؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>تقام الفعالية من 23 إلى 27 سبتمبر في الرياض — جامعة الأميرة نورة، يوميًا من الساعة 6:00 مساءً حتى 12:00 منتصف الليل.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">كيف أشارك كأسرة منتجة أو مشروع صغير؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>اختر تبويب «مستفيد» في نموذج التسجيل، وعبّئ بيانات مشروعك ونوع نشاطك. تُراجع الطلبات خلال 3 أيام عمل ويتم التواصل مع المقبولين لاستكمال إجراءات المشاركة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل الفعالية مناسبة للعائلات والأطفال؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>بالتأكيد! سوق الدار تجربة عائلية بامتياز — زوايا متنوعة تناسب كل الأعمار، من الألعاب الشعبية والفنون إلى الضيافة والمأكولات.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">كيف تصبح جهتنا راعيًا للفعالية؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>اختر تبويب «راعي» في نموذج التسجيل وحدد مستوى الرعاية المناسب. سيتواصل معكم فريق الشراكات خلال يومي عمل لعرض تفاصيل الباقات والمزايا.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== التذييل ===================== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" style="color:var(--cream)">
+        <span class="mark" style="background:var(--cream);color:var(--ink)">سوق<br>الدار</span>
+        <span>سوق الــدار</span>
+      </a>
+      <p>تجربة مجتمعية تجمع بين سلومنا وعلومنا — بدعم من بنك التنمية الاجتماعية.</p>
+    </div>
+    <div>
+      <h5>روابط سريعة</h5>
+      <ul>
+        <li><a href="#about">عن الفعالية</a></li>
+        <li><a href="#zones">زوايا الفعالية</a></li>
+        <li><a href="#register">التسجيل</a></li>
+        <li><a href="#sponsors">الرعاة</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>تواصل معنا</h5>
+      <ul>
+        <li><a href="mailto:info@dulani.gov.sa" dir="ltr" style="display:inline-block">info@dulani.gov.sa</a></li>
+        <li><a href="https://www.dulani.gov.sa" target="_blank" rel="noopener">dulani.gov.sa</a></li>
+        <li><a href="#">الرياض - جامعة الأميرة نورة</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 سوق الدار — جميع الحقوق محفوظة</span>
+    <div class="socials">
+      <a href="#" aria-label="إكس"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.6 2H8l4.4 5.9L18.9 2zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20z"/></svg></a>
+      <a href="#" aria-label="انستقرام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" aria-label="تيك توك"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.1 1.8 3.6 4.4 3.8v3c-1.7 0-3.2-.5-4.4-1.4v6.4c0 3.9-2.8 6.2-6.1 6.2A5.9 5.9 0 0 1 4.5 15c0-3.5 2.9-6 6.5-5.8v3.1c-1.8-.3-3.4.8-3.4 2.7 0 1.7 1.3 2.9 2.9 2.9 1.8 0 3-1.3 3-3.3V3h3.1z"/></svg></a>
+      <a href="#" aria-label="سناب شات"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 0 5 2.2 5 5v2.2c.8.3 1.6-.4 2.3.2.5.5-.2 1.3-1 1.8-.5.3-1.1.6-.9 1.2.5 1.4 2 2.4 3.1 2.7-.4 1-1.9 1.3-3 1.4-.3 0-.4.6-.6 1-.2.4-.6.4-1.2.3-.7-.2-1.5-.3-2.2 0-.9.4-1.5 1.2-3.5 1.2s-2.6-.8-3.5-1.2c-.7-.3-1.5-.2-2.2 0-.6.1-1 .1-1.2-.3-.2-.4-.3-1-.6-1-1.1-.1-2.6-.4-3-1.4 1.1-.3 2.6-1.3 3.1-2.7.2-.6-.4-.9-.9-1.2-.8-.5-1.5-1.3-1-1.8.7-.6 1.5.1 2.3-.2V8c0-2.8 2-5 5-5z" transform="scale(.92) translate(1,1)"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== نافذة النجاح ===================== -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path class="check-path" d="M4.5 12.5l5 5L19.5 7"/>
+      </svg>
+    </div>
+    <h3 id="successTitle">تم التسجيل بنجاح! 🎉</h3>
+    <p id="successMsg">حياك الله في سوق الدار.. وصلتك رسالة تأكيد على جوالك وبريدك</p>
+    <button class="btn" id="successClose"><span class="btn-fill"></span><span>تم ✦</span></button>
+  </div>
+</div>
+<canvas id="confetti-canvas"></canvas>
+
+<button class="to-top" id="toTop" aria-label="العودة لأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+'use strict';
+
+/* ============ بيانات الزوايا (ألوان الهوية الرسمية) ============ */
+const ZONES = [
+  {name:'القدوع', sub:'ضيافة وحفاوة سعودية', desc:'منطقة الاستقبال والضيافة.. أول ما يقابلك من كرمنا', color:'#836F9B', text:'#fff',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4h8l1.5 5c.4 1.4-.4 2.5-1.5 3l-1 5H9l-1-5c-1.1-.5-1.9-1.6-1.5-3L7 4z"/><path d="M15 6.5c2 0 3.5 1 3.5 2.5S17 11.5 15.5 11"/><path d="M6 21h10"/></svg>'},
+  {name:'الطار', sub:'عروض موسيقية حيّة', desc:'مساحة مخصصة للفنون الموسيقية والترفيهية', color:'#4CBBA0', text:'#fff',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="4.5" r="1" fill="currentColor"/><circle cx="19" cy="9" r="1" fill="currentColor"/><circle cx="17.5" cy="17.5" r="1" fill="currentColor"/><circle cx="6.5" cy="17.5" r="1" fill="currentColor"/><circle cx="5" cy="9" r="1" fill="currentColor"/></svg>'},
+  {name:'الدكاكين', sub:'سوق المشاريع الصغيرة', desc:'أركان صغيرة لعرض منتجات الأسر المنتجة والمشاريع المحلية', color:'#4A90E2', text:'#fff',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h16v11H4z"/><path d="M4 9l1.5-5h13L20 9M4 9c0 1.4 1.1 2.5 2.7 2.5S9.3 10.4 9.3 9c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5c0 1.4 1.1 2.5 2.6 2.5S20 10.4 20 9"/><path d="M9 20v-6h6v6"/></svg>'},
+  {name:'الملفى', sub:'جلسات تجمع وراحة', desc:'ركن للجلسات المفتوحة.. تلاقي وسوالف', color:'#F4C430', text:'#141414',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3 4 9v2h16V9l-8-6z"/><path d="M6 11v8M18 11v8M4 19h16M9 19v-4h6v4"/></svg>'},
+  {name:'ساحة الفن', sub:'إبداع مباشر', desc:'مساحة تفاعلية تخصص لورش الفن والعروض الحيّة', color:'#E65100', text:'#fff',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21a9 9 0 1 1 9-9c0 2-1.5 3-3 3h-2c-1.7 0-3 1.3-3 3 0 1.1.9 1.4.9 2.2 0 .5-.4.8-1.9.8z"/><circle cx="8" cy="9" r="1.2" fill="currentColor"/><circle cx="12" cy="7" r="1.2" fill="currentColor"/><circle cx="16" cy="9" r="1.2" fill="currentColor"/></svg>'},
+  {name:'الملاس', sub:'فودتركس', desc:'بمختلف أنواعها وأصنافها.. يجمّع الطباخين والمأكولات', color:'#DAD1C3', text:'#141414',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 16V7h12v9"/><path d="M14 10h4l3 3.5V16h-2.5M2 16h2m5.5 0H16"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/><path d="M5 10h5"/></svg>'},
+  {name:'إرث', sub:'ورش وتجارب تراثية', desc:'منطقة تعكس مزيجًا من الحرف التقليدية والتجارب الثقافية', color:'#00356E', text:'#fff',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 9h16M4 15h16M8 5v14M16 5v14"/></svg>'},
+  {name:'كشك الكوبونات', sub:'جوائز ومرح', desc:'محطة خاصة لتوزيع الكوبونات والجوائز على الزوار', color:'#709E80', text:'#fff',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8.5V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6V15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1.9a2.3 2.3 0 0 0 0-4.6z" transform="translate(0 1.5)"/><path d="M9 9l6 6M9.3 9.3h.01M14.7 14.7h.01" transform="translate(0 .5)"/></svg>'},
+  {name:'يمام', sub:'قهوة واستراحة', desc:'ركن يمام يقدم تجربة ليكون مكانًا للراحة والتوقف وسط الفعالية', color:'#B9CBE9', text:'#141414',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V9z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2M7 5.5c0-1 1-1 1-2M11 5.5c0-1 1-1 1-2"/></svg>'},
+  {name:'تجسيد', sub:'منتجات فاخرة مبتكرة', desc:'مساحة للأسر المنتجة والحرفيين الذين يقدمون منتجات استثنائية بقيمة عالية', color:'#22395B', text:'#fff',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 3h10l4 6-9 12L3 9l4-6z"/><path d="M3 9h18M12 21 8.5 9l2-6M12 21 15.5 9l-2-6"/></svg>'},
+];
+
+const grid = document.getElementById('zonesGrid');
+ZONES.forEach((z,i)=>{
+  const card = document.createElement('article');
+  card.className = 'zone-card reveal';
+  card.style.transitionDelay = (i%4)*0.08 + 's';
+  card.style.setProperty('--zc', z.color);
+  card.style.setProperty('--zc-text', z.text);
+  card.innerHTML = `
+    <div class="zone-fill" style="background:${z.color}"></div>
+    <span class="zone-num">${String(i+1).padStart(2,'٠').replace(/0/g,'٠')}</span>
+    <div class="zone-icon" style="background:${z.color}1f;color:${z.color === '#DAD1C3' || z.color === '#B9CBE9' || z.color === '#F4C430' ? '#141414' : z.color}">${z.icon}</div>
+    <h3>${z.name}</h3>
+    <div class="zone-sub" style="color:${z.color === '#DAD1C3' || z.color === '#B9CBE9' ? '#8a7f6e' : z.color}">${z.sub}</div>
+    <p>${z.desc}</p>`;
+  grid.appendChild(card);
+});
+// أرقام عربية للبطاقات
+document.querySelectorAll('.zone-num').forEach((n,i)=>{
+  const ar = ['٠١','٠٢','٠٣','٠٤','٠٥','٠٦','٠٧','٠٨','٠٩','١٠'];
+  n.textContent = ar[i] || (i+1);
+});
+
+/* ============ شريط التقدم + الترويسة ============ */
+const header = document.getElementById('header');
+const progressBar = document.getElementById('progressBar');
+const toTop = document.getElementById('toTop');
+let ticking = false;
+window.addEventListener('scroll', ()=>{
+  if(!ticking){
+    requestAnimationFrame(()=>{
+      const y = window.scrollY;
+      const h = document.documentElement.scrollHeight - innerHeight;
+      progressBar.style.width = (y/h*100) + '%';
+      header.classList.toggle('scrolled', y > 40);
+      toTop.classList.toggle('show', y > 700);
+      // بارالاكس الأشكال العائمة
+      document.querySelectorAll('.blob').forEach(b=>{
+        b.style.transform = `translateY(${y * parseFloat(b.dataset.speed) * 0.25}px) rotate(${b.dataset.rot}deg)`;
+      });
+      ticking = false;
+    });
+    ticking = true;
+  }
+},{passive:true});
+toTop.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============ قائمة الجوال ============ */
+const hamburger = document.getElementById('hamburger');
+const navList = document.getElementById('navList');
+hamburger.addEventListener('click', ()=>{
+  hamburger.classList.toggle('open');
+  navList.classList.toggle('open');
+  const open = navList.classList.contains('open');
+  header.classList.toggle('menu-open', open);
+  document.body.classList.toggle('menu-open', open);
+});
+navList.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+  hamburger.classList.remove('open');
+  navList.classList.remove('open');
+  header.classList.remove('menu-open');
+  document.body.classList.remove('menu-open');
+}));
+
+/* ============ تمييز القسم النشط ============ */
+const sections = [...document.querySelectorAll('section[id]')];
+const navLinks = [...document.querySelectorAll('.nav-link')];
+const secObserver = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(l=>l.classList.toggle('active', l.getAttribute('href') === '#'+e.target.id));
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(s=>secObserver.observe(s));
+
+/* ============ حركات الظهور ============ */
+const revealObserver = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal,.reveal-right,.reveal-left,.reveal-scale').forEach(el=>revealObserver.observe(el));
+
+/* تلوين كلمات العنوان بعد التحميل */
+window.addEventListener('load', ()=>{
+  setTimeout(()=>document.querySelectorAll('.hero h1 .hl').forEach((el,i)=>{
+    setTimeout(()=>el.classList.add('painted'), i*350);
+  }), 400);
+});
+
+/* ============ عدّاد الأرقام ============ */
+const countObserver = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.count, suffix = el.dataset.suffix||'';
+    const dur = 1600, t0 = performance.now();
+    const tick = now=>{
+      const p = Math.min((now-t0)/dur, 1);
+      el.textContent = Math.round(target * (1-Math.pow(1-p,3))).toLocaleString('ar-SA') + (p===1?suffix:'');
+      if(p<1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    countObserver.unobserve(el);
+  });
+},{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>countObserver.observe(el));
+
+/* ============ العدّاد التنازلي ============ */
+const EVENT_DATE = new Date('2026-09-23T18:00:00+03:00').getTime();
+const cd = {
+  days:document.getElementById('cd-days'), hours:document.getElementById('cd-hours'),
+  mins:document.getElementById('cd-mins'), secs:document.getElementById('cd-secs')
+};
+const fmt = n => n.toLocaleString('ar-SA').padStart(2,'٠');
+function updateCountdown(){
+  let diff = Math.max(0, EVENT_DATE - Date.now());
+  const d = Math.floor(diff/864e5), h = Math.floor(diff%864e5/36e5),
+        m = Math.floor(diff%36e5/6e4), s = Math.floor(diff%6e4/1e3);
+  const vals = {days:d, hours:h, mins:m, secs:s};
+  for(const k in vals){
+    const el = cd[k], txt = fmt(vals[k]);
+    if(el.textContent !== txt){
+      el.textContent = txt;
+      el.parentElement.classList.remove('flash');
+      void el.parentElement.offsetWidth;
+      el.parentElement.classList.add('flash');
+    }
+  }
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ============ الشريط المتحرك (تكرار العناصر) ============ */
+const track = document.getElementById('marqueeTrack');
+track.innerHTML += track.innerHTML;
+
+/* ============ تبويبات التسجيل ============ */
+const tabBtns = [...document.querySelectorAll('.tab-btn')];
+const glider = document.getElementById('tabGlider');
+const panels = [...document.querySelectorAll('.tab-panel')];
+const sideTitles = {
+  visitor:{t:'سجّل وسيّر..<br>ترانا ننتظرك', d:'التسجيل مجاني ولا يأخذ من وقتك أكثر من دقيقة'},
+  beneficiary:{t:'مشروعك يستاهل<br>مكان في الدار', d:'سجّل مشروعك أو أسرتك المنتجة وكن جزءًا من السوق'},
+  sponsor:{t:'شراكة تصنع<br>أثرًا مجتمعيًا', d:'انضم لقائمة رعاة سوق الدار وكن جزءًا من الحكاية'}
+};
+function positionGlider(btn){
+  glider.style.width = btn.offsetWidth + 'px';
+  const parentRect = btn.parentElement.getBoundingClientRect();
+  const rect = btn.getBoundingClientRect();
+  glider.style.right = (parentRect.right - rect.right) + 'px';
+}
+function activateTab(key){
+  tabBtns.forEach(b=>{
+    const on = b.dataset.tab === key;
+    b.classList.toggle('active', on);
+    if(on) positionGlider(b);
+  });
+  panels.forEach(p=>p.classList.toggle('active', p.dataset.panel === key));
+  const s = sideTitles[key];
+  document.getElementById('regSideTitle').innerHTML = s.t;
+  document.getElementById('regSideDesc').textContent = s.d;
+}
+tabBtns.forEach(b=>b.addEventListener('click', ()=>activateTab(b.dataset.tab)));
+window.addEventListener('load', ()=>positionGlider(document.querySelector('.tab-btn.active')));
+window.addEventListener('resize', ()=>positionGlider(document.querySelector('.tab-btn.active')));
+/* أزرار تقفز لتبويب محدد */
+document.querySelectorAll('[data-tab-jump]').forEach(a=>{
+  a.addEventListener('click', ()=>setTimeout(()=>activateTab(a.dataset.tabJump), 350));
+});
+
+/* ============ أيام الحضور ============ */
+const dayPills = [...document.querySelectorAll('#visitorDays .day-pill')];
+dayPills.forEach(p=>p.addEventListener('click', ()=>{
+  p.classList.toggle('selected');
+  document.getElementById('daysErr').style.display = 'none';
+}));
+
+/* ============ عدّاد التذاكر ============ */
+let tickets = 1;
+const ticketEl = document.getElementById('ticketCount');
+document.getElementById('tPlus').addEventListener('click', ()=>{
+  if(tickets < 10){ tickets++; ticketEl.textContent = tickets.toLocaleString('ar-SA'); }
+});
+document.getElementById('tMinus').addEventListener('click', ()=>{
+  if(tickets > 1){ tickets--; ticketEl.textContent = tickets.toLocaleString('ar-SA'); }
+});
+
+/* ============ نوع النشاط + مستوى الرعاية ============ */
+function singleSelect(containerId, errId){
+  const cards = [...document.querySelectorAll('#'+containerId+' > *')];
+  cards.forEach(c=>c.addEventListener('click', ()=>{
+    cards.forEach(x=>x.classList.remove('selected'));
+    c.classList.add('selected');
+    if(errId) document.getElementById(errId).style.display = 'none';
+  }));
+  return ()=>cards.some(c=>c.classList.contains('selected'));
+}
+const hasAct = singleSelect('actCards','actErr');
+const hasTier = singleSelect('tierCards','tierErr');
+
+/* ============ التحقق والإرسال ============ */
+function validateInput(inp){
+  let ok = inp.value.trim() !== '';
+  if(ok && inp.type === 'email') ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inp.value.trim());
+  if(ok && inp.pattern) ok = new RegExp(inp.pattern).test(inp.value.trim());
+  inp.classList.toggle('error', !ok);
+  inp.closest('.field').classList.toggle('show-err', !ok);
+  return ok;
+}
+document.querySelectorAll('.tab-panel input, .tab-panel textarea').forEach(inp=>{
+  inp.addEventListener('input', ()=>{
+    inp.classList.remove('error');
+    inp.closest('.field')?.classList.remove('show-err');
+  });
+});
+const successMessages = {
+  visitor:{t:'تم التسجيل بنجاح! 🎉', m:'حياك الله في سوق الدار.. وصلتك رسالة تأكيد على جوالك وبريدك'},
+  beneficiary:{t:'وصلنا طلب مشاركتك! 🧺', m:'بنراجع طلبك خلال 3 أيام عمل ونتواصل معك فور القبول.. بالتوفيق!'},
+  sponsor:{t:'شكرًا لاهتمامكم بالرعاية! 🤝', m:'سيتواصل معكم فريق الشراكات خلال يومي عمل لعرض تفاصيل الباقات'}
+};
+panels.forEach(form=>{
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('input[required]').forEach(inp=>{ if(!validateInput(inp)) valid = false; });
+    if(form.dataset.panel === 'visitor' && !dayPills.some(p=>p.classList.contains('selected'))){
+      document.getElementById('daysErr').style.display = 'block'; valid = false;
+    }
+    if(form.dataset.panel === 'beneficiary' && !hasAct()){
+      document.getElementById('actErr').style.display = 'block'; valid = false;
+    }
+    if(form.dataset.panel === 'sponsor' && !hasTier()){
+      document.getElementById('tierErr').style.display = 'block'; valid = false;
+    }
+    if(!valid){
+      form.querySelector('.error, .day-pills, .act-cards')?.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    const msg = successMessages[form.dataset.panel];
+    document.getElementById('successTitle').textContent = msg.t;
+    document.getElementById('successMsg').textContent = msg.m;
+    document.getElementById('successOverlay').classList.add('show');
+    launchConfetti();
+    form.reset();
+    dayPills.forEach(p=>p.classList.remove('selected'));
+    tickets = 1; ticketEl.textContent = '١';
+    document.querySelectorAll('.act-card.selected,.tier.selected').forEach(c=>c.classList.remove('selected'));
+  });
+});
+document.getElementById('successClose').addEventListener('click', ()=>{
+  document.getElementById('successOverlay').classList.remove('show');
+});
+document.getElementById('successOverlay').addEventListener('click', e=>{
+  if(e.target === e.currentTarget) e.currentTarget.classList.remove('show');
+});
+
+/* ============ قصاصات الاحتفال (Confetti) ============ */
+const canvas = document.getElementById('confetti-canvas');
+const ctx = canvas.getContext('2d');
+const BRAND_COLORS = ['#E65100','#F4C430','#4CBBA0','#4A90E2','#836F9B','#709E80','#006D5C'];
+let confetti = [], confettiRunning = false;
+function launchConfetti(){
+  canvas.width = innerWidth; canvas.height = innerHeight;
+  confetti = Array.from({length:160}, ()=>({
+    x: innerWidth/2 + (Math.random()-.5)*200,
+    y: innerHeight*0.4,
+    vx: (Math.random()-.5)*14,
+    vy: -Math.random()*14 - 4,
+    size: Math.random()*9+5,
+    color: BRAND_COLORS[Math.random()*BRAND_COLORS.length|0],
+    rot: Math.random()*360,
+    vr: (Math.random()-.5)*20,
+    shape: Math.random()>.5 ? 'rect' : 'circle'
+  }));
+  if(!confettiRunning){ confettiRunning = true; requestAnimationFrame(drawConfetti); }
+}
+function drawConfetti(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  confetti = confetti.filter(p=>p.y < canvas.height + 40);
+  if(confetti.length === 0){ confettiRunning = false; return; }
+  confetti.forEach(p=>{
+    p.x += p.vx; p.y += p.vy; p.vy += 0.35; p.vx *= 0.99; p.rot += p.vr;
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rot * Math.PI/180);
+    ctx.fillStyle = p.color;
+    if(p.shape === 'rect') ctx.fillRect(-p.size/2, -p.size/4, p.size, p.size/2);
+    else { ctx.beginPath(); ctx.arc(0,0,p.size/2.4,0,7); ctx.fill(); }
+    ctx.restore();
+  });
+  requestAnimationFrame(drawConfetti);
+}
+
+/* ============ الأسئلة الشائعة ============ */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click', ()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o=>{
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      const a = item.querySelector('.faq-a');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+/* ============ ميلان بطاقات الزوايا مع حركة الفأرة ============ */
+if(matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches){
+  document.querySelectorAll('.zone-card').forEach(card=>{
+    card.addEventListener('mousemove', e=>{
+      const r = card.getBoundingClientRect();
+      const rx = ((e.clientY - r.top)/r.height - .5) * -7;
+      const ry = ((e.clientX - r.left)/r.width - .5) * 7;
+      card.style.transform = `translateY(-10px) perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
+  });
+}
+
+</script>
+</body>
+</html>
