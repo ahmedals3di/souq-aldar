@@ -527,13 +527,13 @@ footer ul a:hover{opacity:1;padding-right:6px}
 
 /* ---------- حركات الظهور ---------- */
 .reveal{opacity:0;transform:translateY(46px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.visible{opacity:1!important;transform:translateY(0)!important}
 .reveal-right{opacity:0;transform:translateX(60px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-right.visible{opacity:1!important;transform:translateX(0)!important}
 .reveal-left{opacity:0;transform:translateX(-60px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-left.visible{opacity:1!important;transform:translateX(0)!important}
 .reveal-scale{opacity:0;transform:scale(.88);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.reveal-scale.visible{opacity:1;transform:scale(1)}
+.reveal-scale.visible{opacity:1!important;transform:scale(1)!important}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
