@@ -126,10 +126,21 @@ nav a.nav-link.active{background:var(--ink);color:var(--cream)}
   width:100vw;height:56.25vw;min-width:177.78vh;min-height:100vh;border:0;
 }
 .hero-overlay{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(250,246,239,.90),rgba(250,246,239,.82) 55%,rgba(250,246,239,.90));
+  background:linear-gradient(270deg,rgba(250,246,239,.94) 0%,rgba(250,246,239,.88) 40%,rgba(250,246,239,.60) 72%,rgba(250,246,239,.50) 100%);
 }
-.hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:5;width:100%;text-align:left}
-.hero-content{max-width:730px;margin-left:0;margin-right:auto}
+@media(max-width:768px){.hero-overlay{background:linear-gradient(180deg,rgba(250,246,239,.86),rgba(250,246,239,.72) 60%,rgba(250,246,239,.55))}}
+.sound-toggle{position:absolute;z-index:6;bottom:28px;left:28px;width:54px;height:54px;border-radius:50%;
+  background:var(--ink);color:var(--cream);display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 12px 28px -10px rgba(20,20,20,.45);transition:transform .3s var(--ease),background .3s;
+  animation:float-badge 6s ease-in-out infinite}
+.sound-toggle:hover{transform:scale(1.09);background:var(--orange)}
+.sound-toggle svg{width:23px;height:23px}
+.sound-toggle .ic-off{display:none}
+.sound-toggle.muted .ic-on{display:none}
+.sound-toggle.muted .ic-off{display:block}
+@media(max-width:768px){.sound-toggle{width:46px;height:46px;bottom:20px;left:20px}.sound-toggle svg{width:20px;height:20px}}
+.hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:5;width:100%;text-align:right}
+.hero-content{max-width:730px;margin-left:auto;margin-right:0}
 .hero-logo{height:clamp(70px,8.5vw,112px);width:auto;display:block;margin:0 auto 24px 0;
   animation:float-badge 6s ease-in-out infinite}
 .hero-ctas{justify-content:flex-end}
@@ -614,10 +625,14 @@ footer ul a:hover{opacity:1;padding-right:6px}
 <!-- ===================== البطل ===================== -->
 <section class="hero" id="hero">
   <div class="hero-video">
-    <iframe id="heroVideo" src="https://www.youtube-nocookie.com/embed/vkdNfLnZGXo?autoplay=1&mute=1&loop=1&playlist=vkdNfLnZGXo&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0&iv_load_policy=3"
+    <iframe id="heroVideo" src="https://www.youtube-nocookie.com/embed/vkdNfLnZGXo?autoplay=1&mute=1&loop=1&playlist=vkdNfLnZGXo&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0&iv_load_policy=3&enablejsapi=1"
       title="خلفية سوق الدار" allow="autoplay; encrypted-media" frameborder="0" tabindex="-1" aria-hidden="true"></iframe>
   </div>
   <div class="hero-overlay"></div>
+  <button class="sound-toggle muted" id="soundToggle" aria-label="تشغيل صوت الفيديو" title="صوت الفيديو">
+    <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.8 5.5a9 9 0 0 1 0 13"/></svg>
+    <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+  </button>
   <div class="blob b1" data-speed="0.35" data-rot="8"></div>
   <div class="blob b2" data-speed="0.6" data-rot="-6"></div>
   <div class="blob b4" data-speed="0.45" data-rot="-9"></div>
@@ -1418,6 +1433,35 @@ if(matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matche
     card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
   });
 }
+
+/* ============ صوت فيديو الخلفية (متوسط) ============ */
+(function(){
+  const VOL = 50;
+  let player=null, wantSound=true;
+  const btn=document.getElementById('soundToggle');
+  const tag=document.createElement('script');
+  tag.src='https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('heroVideo',{events:{
+      onReady:function(){ try{ player.setVolume(VOL); player.playVideo(); }catch(e){} refresh(); }
+    }});
+  };
+  function muted(){ try{ return !player || (player.isMuted && player.isMuted()); }catch(e){ return true; } }
+  function refresh(){ if(btn) btn.classList.toggle('muted', muted()); }
+  function soundOn(){ if(!player) return; try{ player.unMute(); player.setVolume(VOL); }catch(e){} refresh(); }
+  function soundOff(){ if(!player) return; try{ player.mute(); }catch(e){} refresh(); }
+  ['pointerdown','keydown','touchstart','wheel'].forEach(function(ev){
+    window.addEventListener(ev, function once(){
+      window.removeEventListener(ev, once);
+      if(wantSound) soundOn();
+    }, {once:true, passive:true});
+  });
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(muted()){ wantSound=true; soundOn(); } else { wantSound=false; soundOff(); }
+  });
+})();
 
 </script>
 </body>
